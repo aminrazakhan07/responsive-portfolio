@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:mob_desk_portfolio/screen/aboutme.dart';
-import 'package:mob_desk_portfolio/screen/home.dart';
-import 'package:mob_desk_portfolio/screen/project.dart';
+import 'package:mob_desk_portfolio/screen_p1/home.dart';
+import 'package:mob_desk_portfolio/screen_p2/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'HomeScreen',
+      initialRoute: 'HomeScreen2',
       routes: {
+        'HomeScreen2': (context) => HomeScreen2(),
         'HomeScreen': (context) => HomeScreen(),
-        'AboutScreen': (context) => AboutScreen(),
-        'ProjectsScreen': (context) => ProjectsScreen(),
+        // 'AboutScreen': (context) => AboutScreen(),
+        // 'ProjectsScreen': (context) => ProjectsScreen(),
       },
     );
   }

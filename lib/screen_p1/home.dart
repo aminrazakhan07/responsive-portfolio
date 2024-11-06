@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:mob_desk_portfolio/screen/aboutme.dart';
-import 'package:mob_desk_portfolio/screen/home_widget.dart';
-import 'package:mob_desk_portfolio/screen/project.dart';
+import 'package:mob_desk_portfolio/screen_p1/home_widget.dart';
 import 'package:sliding_sheet2/sliding_sheet2.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         title: Text('My Portfolio'),
         leading: PopupMenuButton(
           icon: Icon(Icons.menu),
-          iconColor: Colors.red,
+          iconColor: Colors.black,
           color: Colors.black,
           itemBuilder: (context) => [
             PopupMenuItem(
@@ -59,7 +57,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             SizedBox(
               width: double.infinity,
-              height: double.infinity,
+              height: 500,
               child: ShaderMask(
                 shaderCallback: (rect) {
                   return LinearGradient(
@@ -131,6 +129,7 @@ class HomeScreen extends StatelessWidget {
                     builder: (context, constraints) {
                       int cardCount = 9;
                       return GridView.builder(
+                        physics: ScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: constraints.maxWidth > 600
                               ? 4
@@ -153,8 +152,7 @@ class HomeScreen extends StatelessWidget {
                               return containrCartd(Icons.cloud_upload, 'Cloud');
                             case 5:
                               return containrCartd(
-                                  Icons.align_horizontal_center_rounded,
-                                  'Blockchain');
+                                  Icons.account_balance_wallet, 'Blockchain');
                             case 6:
                               return containrCartd(
                                   Icons.device_hub, 'Device Hub');
